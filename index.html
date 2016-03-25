@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Employee Details</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+
+		<!-- The main CSS file -->
+		<link href="css/custom.css" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
+	<body ng-app="instantSearch" ng-controller="InstantSearchController">
+		<div class="wp-caption">
+            <form>
+		      <div class= "bar">
+			     <!-- Create a binding between the searchString model and the text field -->
+                <input type="text" ng-model="searchString" placeholder="Enter your search terms"></input>
+                    <a class="close-icon" data-ng-click="clearSearch()">X</a>          
+		      </div>
+            </form>
+		      <p style="border-radius: 10px;border: 1px solid #ccc;"></p>
+		      <ul class="list-inline">
+                <!-- Render a li element for every entry in the items array. Notice
+                     the custom search filter "searchFor". It takes the value of the
+                     searchString model as an argument.
+                 -->
+			     <li ng-repeat="i in items | searchFor:searchString" ng-class="{'blue-border-li':i.gender=='M','red-border-li':i.gender=='F'}" class="list-group-item">
+				    <p>{{i.name}}</p>
+				    <table >
+					   <tr>
+						  <td>Age</td>
+						  <td>:</td>
+						  <td>{{i.gender}}</td>
+					   </tr>
+					   <tr>
+						  <td>City</td>
+						  <td>:</td>
+						  <td>{{i.city}}</td>
+					   </tr>
+				    </table>
+				</li>
+		      </ul>
+		  </div>
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="js/angular.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
