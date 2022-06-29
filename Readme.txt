@@ -4,4 +4,3 @@ To Run The Application locally you Can download Brackets which comes with builti
 
 In script.js file under js folder Uncomment the hard coded data model to make call and get response from JSON file. 
 
-# Email-id : mohitbio@gmail.com
